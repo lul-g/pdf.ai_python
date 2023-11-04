@@ -6,4 +6,6 @@
 - ## install libs
   - `pip install -r requirements.txt`
 - ## run app
-  - `streamlint run app.py`  
+  - `streamlint run app.py`
+ 
+# `Make sure to have openAi secret in .env file `
