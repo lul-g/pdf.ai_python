@@ -26,7 +26,7 @@ from pdfminer.high_level import extract_text, extract_pages
 
 # Sidebar contents
 with st.sidebar:
-    st.title('🤗💬 LLM Chat App')
+    st.title('PDF Chatbot')
     st.markdown('''
     ## About
     This app is an LLM-powered chatbot built using:
@@ -36,7 +36,6 @@ with st.sidebar:
 
     ''')
     add_vertical_space(5)
-    st.write('Made with ❤️ by [Prompt Engineer](https://youtube.com/@engineerprompt)')
 
 load_dotenv()
 
@@ -85,7 +84,7 @@ def main():
         # VectorStore = FAISS.from_texts(chunks, embedding=embeddings)
 
         # Accept user questions/query
-        query = st.text_input("Ask questions about your PDF file:")
+        query = st.text_input("Ask questions about the PDF file:")
         # st.write(query)
 
         if query:
@@ -98,7 +97,7 @@ def main():
             with get_openai_callback() as cb:
                 response = chain.run(input_documents=docs, question=query)
                 print(cb)
-            st.write('AI Response 👾')
+            st.write('Response 👾')
             st.write(response)
 
 if __name__ == '__main__':
